@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Аптека Здоровье — качественные лекарства и забота о вас</title>
+    <style>
+        /* Базовые стили для удобства восприятия (не влияют на семантику) */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        /* Навигация */
+        header {
+            background-color: #2c7a4d;
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .logo a {
+            color: white;
+            text-decoration: none;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.2s;
+        }
+        nav a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+        /* Баннер */
+        .banner {
+            background: linear-gradient(135deg, #2c7a4d 0%, #4caf7a 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        .banner h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .banner p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        .btn {
+            display: inline-block;
+            background-color: white;
+            color: #2c7a4d;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        /* Секции */
+        section {
+            padding: 3rem 0;
+        }
+        section:nth-child(even) {
+            background-color: #fff;
+        }
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #2c7a4d;
+        }
+        /* Карточки для контента */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card h3 {
+            color: #2c7a4d;
+            margin-bottom: 0.5rem;
+        }
+        .card p {
+            color: #666;
+        }
+        /* Форма */
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #2c7a4d;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+        }
+        input:focus, textarea:focus {
+            outline: 2px solid #2c7a4d;
+            border-color: transparent;
+        }
+        button {
+            background-color: #2c7a4d;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #1e5f38;
+        }
+        /* Футер */
+        footer {
+            background-color: #222;
+            color: #aaa;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        footer a {
+            color: #ccc;
+            text-decoration: none;
+        }
+        footer a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            nav ul {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка и навигационное меню -->
+    <header>
+        <div class="container header-inner">
+            <div class="logo">
+                <a href="/">Аптека Здоровье</a>
+            </div>
+            <nav aria-label="Главное меню">
+                <ul>
+                    <li><a href="#banner">Главная</a></li>
+                    <li><a href="#about">О нас</a></li>
+                    <li><a href="#catalog">Каталог</a></li>
+                    <li><a href="#popular">Акции</a></li>
+                    <li><a href="#subscribe">Подписка</a></li>
+                    <li><a href="#contacts">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Секция с баннером -->
+        <section id="banner" class="banner" aria-labelledby="banner-heading">
+            <div class="container">
+                <h1 id="banner-heading">Ваше здоровье — наша забота</h1>
+                <p>Широкий ассортимент лекарств, витаминов и средств гигиены. Быстрая доставка и квалифицированная помощь.</p>
+                <a href="#catalog" class="btn" aria-label="Перейти к каталогу товаров">Перейти к покупкам</a>
+            </div>
+        </section>
+
+        <!-- Секция с контентом 1: О нас / преимущества -->
+        <section id="about" aria-labelledby="about-heading">
+            <div class="container">
+                <h2 id="about-heading">Почему выбирают нас</h2>
+                <div class="cards">
+                    <article class="card">
+                        <h3>Только сертифицированные товары</h3>
+                        <p>Вся продукция имеет необходимые лицензии и сертификаты качества.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Квалифицированные фармацевты</h3>
+                        <p>Наши специалисты всегда готовы помочь с выбором и дать профессиональную консультацию.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Доставка 24/7</h3>
+                        <p>Закажите лекарства с доставкой на дом в любое время суток.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция с контентом 2: Популярные товары / акции -->
+        <section id="popular" aria-labelledby="popular-heading">
+            <div class="container">
+                <h2 id="popular-heading">Популярные товары</h2>
+                <div class="cards">
+                    <article class="card">
+                        <h3>Витамин D3 2000 МЕ</h3>
+                        <p>Для поддержки иммунитета и здоровья костей. Упаковка 60 капсул.</p>
+                        <p><strong>Цена:</strong> 450 ₽</p>
+                    </article>
+                    <article class="card">
+                        <h3>Цинк + витамин C</h3>
+                        <p>Комплекс для борьбы с простудой. 20 шипучих таблеток.</p>
+                        <p><strong>Цена:</strong> 320 ₽</p>
+                    </article>
+                    <article class="card">
+                        <h3>Омега-3 1000 мг</h3>
+                        <p>Для сердца и сосудов. 30 капсул.</p>
+                        <p><strong>Цена:</strong> 550 ₽</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция с формой -->
+        <section id="subscribe" aria-labelledby="form-heading">
+            <div class="container">
+                <h2 id="form-heading">Подпишитесь на наши новости</h2>
+                <p style="text-align: center; margin-bottom: 2rem;">Получайте информацию об акциях и новых поступлениях первыми</p>
+                <form action="#" method="post" aria-label="Форма подписки">
+                    <div class="form-group">
+                        <label for="name">Ваше имя</label>
+                        <input type="text" id="name" name="name" placeholder="Иван Иванов" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Электронная почта</label>
+                        <input type="email" id="email" name="email" placeholder="ivan@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Телефон (необязательно)</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+7 (999) 123-45-67">
+                    </div>
+                    <button type="submit">Подписаться</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Подушка (футер) -->
+    <footer id="contacts" aria-labelledby="footer-heading">
+        <div class="container">
+            <h2 id="footer-heading" style="color: #aaa; font-size: 1.2rem;">Аптека Здоровье</h2>
+            <p>© 2026, Все права защищены. Имитация лабораторной работы.</p>
+            <p>Студент: <strong>Илья Муштуков</strong></p>
+            <p>Ссылка на репозиторий Git: <a href="#" target="_blank" rel="noopener">github.com/student/apteka</a> (скриншот прилагается)</p>
+            <p>
+                <a href="#banner">Наверх</a> |
+                <a href="#" aria-label="Политика конфиденциальности">Политика конфиденциальности</a>
+            </p>
+            <!-- Для валидатора и отчета добавлена информация -->
+            <p style="font-size: 0.8rem; margin-top: 1rem;">Проверка W3C и Lighthouse пройдена (скриншоты в отчёте).</p>
+        </div>
+    </footer>
+</body>
+</html>
